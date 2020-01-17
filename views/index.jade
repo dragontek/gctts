@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .container
+    .row
+      .column.column-10
+      .column.column-80
+        h3 Welcome to #{title}
+        form(id="translate")
+          fieldset
+            select(name="voice")
+              option(value="en-US-Wavenet-A") en-US-Wavenet-A
+              option(value="en-US-Wavenet-B") en-US-Wavenet-B
+              option(value="en-US-Wavenet-C") en-US-Wavenet-C
+              option(value="en-US-Wavenet-D") en-US-Wavenet-D
+              option(value="en-US-Wavenet-E") en-US-Wavenet-E
+              option(value="en-US-Wavenet-F") en-US-Wavenet-F
+              option(value="en-US-Standard-B") en-US-Standard-B
+              option(value="en-US-Standard-C") en-US-Standard-C
+              option(value="en-US-Standard-D") en-US-Standard-D
+              option(value="en-US-Standard-E") en-US-Standard-E
+
+              
+            textarea(name="text" id="text" style="height:250px" placeholder="Enter your text here to convert text-to-speech", autofocus)
+          button.button(type="submit") Translate
+          button.button.button-outline.float-right(type="reset") Reset
+        .text-center
+          audio(id="player" controls="controls" autobuffer="autobuffer" autoplay="autoplay")
+            source(id="mp3_src" src)
+      .column.column-10
+
