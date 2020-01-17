@@ -5,25 +5,52 @@ block content
     .row
       .column.column-10
       .column.column-80
-        h3 Welcome to #{title}
+        h3.text-center Welcome to #{title}
         form(id="translate")
           fieldset
-            select(name="voice")
-              option(value="en-US-Wavenet-A") en-US-Wavenet-A
-              option(value="en-US-Wavenet-B") en-US-Wavenet-B
-              option(value="en-US-Wavenet-C") en-US-Wavenet-C
-              option(value="en-US-Wavenet-D") en-US-Wavenet-D
-              option(value="en-US-Wavenet-E") en-US-Wavenet-E
-              option(value="en-US-Wavenet-F") en-US-Wavenet-F
-              option(value="en-US-Standard-B") en-US-Standard-B
-              option(value="en-US-Standard-C") en-US-Standard-C
-              option(value="en-US-Standard-D") en-US-Standard-D
-              option(value="en-US-Standard-E") en-US-Standard-E
-
+            .row          
+              .column
+                select(name="languages" id="languages" placeholder="Select a language")
+                  option(value='ar-XA') Arabic
+                  option(value='cs-CZ') Czech (Czech Republic)
+                  option(value='da-DK') Danish (Denmark)
+                  option(value='nl-NK') Dutch (Netherlands)
+                  option(value='en-AU') English (Australia)
+                  option(value='en-IN') English (India)
+                  option(value='en-GB') English (UK)
+                  option(selected='selected', value='en-US') English (US)
+                  option(value='fil-PH') Filipino (Philippines)
+                  option(value='fi-FI') Finnish (Finland)
+                  option(value='fr-CA') French (Canada)
+                  option(value='fr-FR') French (France)
+                  option(value='de-DE') German (Germany)
+                  option(value='el-GR') Greek (Greece)
+                  option(value='hi-IN') Hindi (India)
+                  option(value='hu-HU') Hungarian (Hungary)
+                  option(value='id-ID') Indonesian (Indonesia)
+                  option(value='it-IT') Italian (Italy)
+                  option(value='ja-JP') Japanese (Japan)
+                  option(value='ko-KR') Korean (South Korea)
+                  option(value='cmn-CN') Mandarin Chinese
+                  option(value='nb-NO') Norwegian (Norway)
+                  option(value='pl-PL') Polish (Poland)
+                  option(value='pt-BR') Portuguese (Brazil)
+                  option(value='pt-PT') Portuguese (Portugal)
+                  option(value='ru-RU') Russian (Russia)
+                  option(value='sk-SK') Slovak (Slovakia)
+                  option(value='es-ES') Spanish (Spain)
+                  option(value='sv-SE') Swedish (Sweden)
+                  option(value='tr-TR') Turkish (Turkey)
+                  option(value='uk-UA') Ukrainian (Ukraine)
+                  option(value='vi-VN') Vietnamese (Vietnam)
+              .column.column-10
+                img(id='flag' src='images/flags/en-US.png')
+              .column
+                select(name="voices" id="voices")
               
             textarea(name="text" id="text" style="height:250px" placeholder="Enter your text here to convert text-to-speech", autofocus)
-          button.button(type="submit") Translate
-          button.button.button-outline.float-right(type="reset") Reset
+          button.button(type="submit") Go
+          button.button.button-outline.float-right(type="reset") Clear
         .text-center
           audio(id="player" controls="controls" autobuffer="autobuffer" autoplay="autoplay")
             source(id="mp3_src" src)
