@@ -3,8 +3,7 @@ extends layout
 block content
   .container
     .row
-      .column.column-10
-      .column.column-80
+      .column
         h3.text-center Welcome to #{title}
         form(id="translate")
           fieldset
@@ -54,5 +53,4 @@ block content
         .text-center
           audio(id="player" controls="controls" autobuffer="autobuffer" autoplay="autoplay")
             source(id="mp3_src" src)
-      .column.column-10
 
