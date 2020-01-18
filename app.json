@@ -1,0 +1,19 @@
+{
+    "name": "gctts",
+    "description": "Google Cloud Text-to-Speech",
+    "keywords": [
+      "dokku",
+      "node",
+      "dragontek.cloud"
+    ],
+    "buildpacks": [
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+      }
+    ],
+    "scripts": {
+      "dokku": {
+        "predeploy": "touch /app/predeploy.test"
+      }
+    }
+  }
