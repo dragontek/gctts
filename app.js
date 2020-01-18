@@ -9,6 +9,11 @@ var translateRouter = require('./routes/translate');
 
 var app = express();
 
+logger.token('remote-addr', function (req, res) {
+  var ffHeaderValue = req.headers['x-forwarded-for'];
+  return ffHeaderValue || req.connection.remoteAddress;
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

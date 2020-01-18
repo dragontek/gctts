@@ -32,7 +32,7 @@ By default, the docker image will set the `GOOGLE_APPLICATION_CREDENTIALS` envir
 # TODO
 - Transition from JADE to static HTML with jQuery
 - Add SSML Editor or at at least tag substitution/recognition
-- Add better logging (winston)
+- ~~Add better logging~~
 - ~~Add SSML support~~
 - ~~Improve mobile layout~~
 - ~~Separate languages from voice selection~~
