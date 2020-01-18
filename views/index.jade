@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .container
+  .container(style="max-width: 800px;")
     .row
       .column
         h3.text-center Welcome to #{title}
@@ -9,7 +9,7 @@ block content
           fieldset
             .row          
               .column
-                select(name="languages" id="languages" placeholder="Select a language")
+                select(name="languages" id="languages" placeholder="Select a language" required)
                   option(value='ar-XA') Arabic
                   option(value='cs-CZ') Czech (Czech Republic)
                   option(value='da-DK') Danish (Denmark)
@@ -42,15 +42,24 @@ block content
                   option(value='tr-TR') Turkish (Turkey)
                   option(value='uk-UA') Ukrainian (Ukraine)
                   option(value='vi-VN') Vietnamese (Vietnam)
-              .column.column-10
+              .column.column-10.text-center(style="margin: 0px auto;")
                 img(id='flag' src='images/flags/en-US.png')
               .column
-                select(name="voices" id="voices")
-              
-            textarea(name="text" id="text" style="height:250px" placeholder="Enter your text here to convert text-to-speech", autofocus)
-          button.button(type="submit") Go
-          button.button.button-outline.float-right(type="reset") Clear
-        .text-center
-          audio(id="player" controls="controls" autobuffer="autobuffer" autoplay="autoplay")
-            source(id="mp3_src" src)
+                select(name="voices" id="voices" placeholder="Select a voice" required)
+            textarea(name="text" id="text" style="height:225px" placeholder="Enter your text here to convert text-to-speech" autofocus required)
+          .row
+            .column
+              button.button(type="submit") Go
+            .column.column-30.text-center(style="margin: 0px auto;")
+              span(style="padding: 10px") Text
+              label.switch
+                input(id="ssml" type="checkbox")
+                span.slider.round
+              span(style="padding: 10px") SSML
+            .column
+              button.button.button-outline.float-right(type="reset") Clear
+        .row
+          .column.text-center
+            audio(id="player" controls="controls" autobuffer="autobuffer" autoplay="autoplay" style="width: 100%;")
+              source(id="mp3_src" src)
 

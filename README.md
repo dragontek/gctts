@@ -30,7 +30,10 @@ By default, the docker image will set the `GOOGLE_APPLICATION_CREDENTIALS` envir
 ```
 
 # TODO
-- Transition from JADE to static HTML with jQuery (this is overkill for SPA and unnecessary for this scenario)
+- Transition from JADE to static HTML with jQuery
+- Add SSML Editor or at at least tag substitution/recognition
+- ~~Add SSML support~~
+- ~~Improve mobile layout~~
 - ~~Separate languages from voice selection~~
 - ~~Add country flags for locales~~
 - ~~Better UI for voice dropdown~~

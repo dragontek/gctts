@@ -11,15 +11,21 @@ router.post('/', async (req, res) =>  {
         res.status(400);
         res.json({message: "Bad Request"});
     } else {
-        const request = {
-            input: { text: req.body.text },
+
+        let request = {
+            input: {  },
             // Select the language and SSML voice gender (optional)
             //voice: {languageCode: 'en-US', name:"en-US-Wavenet-D", ssmlGender: 'MALE'},
             voice: { languageCode: req.body.language, name: req.body.voice },
             // select the type of audio encoding
             audioConfig: { audioEncoding: 'MP3' },
         };
-    
+        if(req.body.ssml == "true") {
+            request.input.ssml = req.body.text;
+        } else {
+            request.input.text = req.body.text;
+        }
+        //console.log(request);
         // Performs the text-to-speech request
         const [response] = await client.synthesizeSpeech(request); 
         //res.json(response)

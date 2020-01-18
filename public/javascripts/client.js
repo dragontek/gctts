@@ -31,6 +31,7 @@ $( document ).ready(function() {
        var request = { 
            text: $("textarea").val(),
            language: $("select#languages").val(),
+           ssml: $("#ssml").is(':checked'),
            voice: $("select#voices").val()
        }
 
