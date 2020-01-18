@@ -7,8 +7,10 @@ const client = new textToSpeech.TextToSpeechClient();
 /* POST translate. */
 router.post('/', async (req, res) =>  {
    //Check if all fields are provided and are valid:
+   // TODO: Add more checks for validity (SSML tags)
    if(!req.body.text){
         res.status(400);
+        console.error("Missing Body")
         res.json({message: "Bad Request"});
     } else {
 
@@ -25,7 +27,7 @@ router.post('/', async (req, res) =>  {
         } else {
             request.input.text = req.body.text;
         }
-        //console.log(request);
+        console.info("Request Body:", request);
         // Performs the text-to-speech request
         const [response] = await client.synthesizeSpeech(request); 
         //res.json(response)
