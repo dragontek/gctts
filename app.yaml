@@ -14,3 +14,14 @@
 # [START gae_quickstart_yaml]
 runtime: nodejs12
 # [END gae_quickstart_yaml]
+
+env_variables:
+    GCTTS_TITLE: "Dragontek Cloud Text-to-Speech"
+  
+handlers:
+    - url: /public
+      static_dir: public
+    - url: /.*
+      secure: always
+      redirect_http_response_code: 301
+      script: auto
