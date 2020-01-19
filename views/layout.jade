@@ -13,6 +13,14 @@ html
     block content
 
   script(src='//code.jquery.com/jquery-3.4.1.min.js')
-  //script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js')
   script(src='javascripts/pace.min.js')
   script(src='javascripts/client.js')
+  - if(typeof(google_analytics) != 'undefined') {
+  // Global site tag (gtag.js) - Google Analytics
+  script(async src="https://www.googletagmanager.com/gtag/js?id=#{google_analytics}")
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '#{google_analytics}');
+  - }
