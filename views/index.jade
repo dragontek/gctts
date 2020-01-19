@@ -13,7 +13,7 @@ block content
                   option(value='ar-XA') Arabic
                   option(value='cs-CZ') Czech (Czech Republic)
                   option(value='da-DK') Danish (Denmark)
-                  option(value='nl-NK') Dutch (Netherlands)
+                  option(value='nl-NL') Dutch (Netherlands)
                   option(value='en-AU') English (Australia)
                   option(value='en-IN') English (India)
                   option(value='en-GB') English (UK)
@@ -47,6 +47,8 @@ block content
               .column
                 select(name="voices" id="voices" placeholder="Select a voice" required)
             textarea(name="text" id="text" style="height:225px" placeholder="Enter your text here to convert text-to-speech" autofocus required)
+            - if(typeof(google_recaptcha_key) != 'undefined')
+              .text-center.g-recaptcha(data-sitekey="#{google_recaptcha_key}")
           .row
             .column
               button.button(type="submit") Go
