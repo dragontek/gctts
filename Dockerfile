@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:12
 
 WORKDIR /usr/src/app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 8080
 
 ENV GOOGLE_APPLICATION_CREDENTIALS=/root/.config/gcloud.json
 
