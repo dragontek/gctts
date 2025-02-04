@@ -10,6 +10,6 @@ COPY . .
 
 EXPOSE 8080
 
-ENV GOOGLE_APPLICATION_CREDENTIALS=/root/.config/gcloud.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud.json
 
 CMD ["npm", "start"]
